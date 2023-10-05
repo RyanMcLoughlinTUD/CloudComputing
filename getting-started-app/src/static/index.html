@@ -17,5 +17,20 @@
     <script src="js/react-bootstrap.js"></script>
     <script src="js/babel.min.js"></script>
     <script type="text/babel" src="js/app.js"></script>
+    <button id="redirectButton">A magic trick</button>
+
+    <!-- Include the JavaScript file -->
+    <script src="js/redirect.js"></script>
+
+    <script>
+        // Get a reference to the button element
+        var button = document.getElementById("redirectButton");
+
+        // Add a click event listener to the button
+        button.addEventListener("click", function() {
+            // Call the redirectToURL function with the desired URL
+            redirectToURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        });
+    </script>
 </body>
 </html>
