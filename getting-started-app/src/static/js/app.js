@@ -53,7 +53,7 @@ function TodoListCard() {
         <React.Fragment>
             <AddItemForm onNewItem={onNewItem} />
             {items.length === 0 && (
-                <p className="text-center">No items yet! Add one above!</p>
+                <p className="text-center">No items on your to do list. Either this is a good thing, or you've forgotten to fill me in'</p>
             )}
             {items.map(item => (
                 <ItemDisplay
@@ -176,4 +176,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
     );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function redirectUser(){
+	window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
