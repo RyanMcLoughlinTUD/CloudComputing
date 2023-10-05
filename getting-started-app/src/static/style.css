@@ -1,0 +1,63 @@
+body
+    {
+        font-family: Sans-Serif ;
+        color: rgb(59, 59, 59) ;
+        margin-top:10px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 10px;
+    }
+
+#container 
+    {
+        width: 60%;
+        margin: auto;
+    }
+header
+    {
+        margin-top: 20px;
+    }
+img 
+    {
+        width : 100%;
+        height: auto;
+    }
+
+h1 
+    {
+        font-size : 300%;
+    }
+
+h1,h2 
+    {
+        text-transform: uppercase;
+        color : rgb(155, 221, 243);
+        font-weight: 100;
+    }
+footer 
+    {
+        margin-top: 70px ;
+        background-color: rgb(146, 220, 245);
+        color: rgb(87, 86, 86) ;
+    }
+
+footer p 
+    {
+        text-align: center;
+        padding-top: 15px ;
+        padding-bottom: 15px ;
+    }
+
+@media screen and (max-width: 768px)
+{
+    #container 
+    {
+        width: 90%;
+        margin: auto;
+    }
+
+    h1 
+    {
+        font-size: 200%
+    }
+}
