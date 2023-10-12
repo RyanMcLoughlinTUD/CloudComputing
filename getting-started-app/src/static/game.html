@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Guessing Game</title>
+</head>
+<body>
+  <h1>Number Guessing Game</h1>
+  <p>Guess a number between 1 and 20:</p>
+  <input type="text" id="guess" />
+  <button onclick="checkGuess()">Submit Guess</button>
+  <p id="message"></p>
+  <p>Attempts left: <span id="attempts">3</span></p>
+  <button onclick="resetGame()">Reset Game</button>
+
+  <script>
+    let targetNumber;
+    let attempts = 3;
+
+    function resetGame() {
+      targetNumber = Math.floor(Math.random() * 20) + 1;
+      attempts = 3;
+      document.getElementById('attempts').textContent = attempts;
+      document.getElementById('message').textContent = '';
+      document.getElementById('guess').value = '';
+      document.getElementById('guess').disabled = false;
+    }
+
+    function checkGuess() {
+      const guessInput = document.getElementById('guess');
+      const message = document.getElementById('message');
+      const attemptsDisplay = document.getElementById('attempts');
+
+      const guess = parseInt(guessInput.value);
+
+      if (isNaN(guess) || guess < 1 || guess > 20) {
+        message.textContent = 'Please enter a valid number between 1 and 20.';
+      } else {
+        attempts--;
+        attemptsDisplay.textContent = attempts;
+
+        if (guess === targetNumber) {
+          message.textContent = 'Congratulations! You guessed the correct number.';
+          message.style.color = 'green';
+          guessInput.disabled = true;
+        } else if (guess < targetNumber) {
+          message.textContent = 'Try a higher number.';
+          message.style.color = 'red';
+        } else {
+          message.textContent = 'Try a lower number.';
+          message.style.color = 'red';
+        }
+
+        if (attempts === 0) {
+          message.textContent = `Sorry, you're out of attempts. The correct number was ${targetNumber}.`;
+          guessInput.disabled = true;
+        }
+      }
+    }
+
+    // Initial game setup
+    resetGame();
+  </script>
+  <a href="index.html">Return to home</a>
+</body>
+</html>
